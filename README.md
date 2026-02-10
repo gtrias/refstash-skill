@@ -9,14 +9,14 @@ Fetch UI references from Refstash for design exploration, pattern analysis, and 
 ## Installation
 
 ```
-npx skills add refstash/skills
+npx skills add gtrias/refstash-skill
 ```
 
 Or for Claude Code specifically:
 
 ```
-/plugin marketplace add refstash/skills
-/plugin install refstash@refstash-skills
+/plugin marketplace add gtrias/refstash-skill
+/plugin install refstash@refstash-skill
 ```
 
 ## Setup
@@ -123,7 +123,7 @@ See the `examples/` directory for detailed prompt templates:
 
 - Website: [refstash.app](https://refstash.app)
 - Documentation: [docs.refstash.app](https://docs.refstash.app)
-- Issues: [github.com/refstash/refstash-skill](https://github.com/refstash/refstash-skill/issues)
+- Issues: [github.com/gtrias/refstash-skill](https://github.com/gtrias/refstash-skill/issues)
 
 ## License
 
