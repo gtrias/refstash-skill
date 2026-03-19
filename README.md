@@ -39,6 +39,14 @@ REFSTASH_API_TOKEN=your_token_here
 
 The skill provides two main operations:
 
+### `refstash.listProjects`
+
+List your projects so you can pick a `projectId` to search:
+
+```
+List my Refstash projects and return their ids and names.
+```
+
 ### `refstash.search`
 
 Fetch references from your projects:
@@ -124,6 +132,19 @@ See the `examples/` directory for detailed prompt templates:
 - Website: [refstash.app](https://refstash.app)
 - Documentation: [docs.refstash.app](https://docs.refstash.app)
 - Issues: [github.com/gtrias/refstash-skill](https://github.com/gtrias/refstash-skill/issues)
+
+## Publishing (Maintainers)
+
+The skill source of truth lives in `skills/refstash/` inside the main [inspire repo](https://gitlab.com/gtrias/inspire). The public GitHub repo ([gtrias/refstash-skill](https://github.com/gtrias/refstash-skill)) is a mirror for distribution.
+
+To publish updates after editing the skill:
+
+```bash
+./scripts/publish-skill.sh          # interactive — shows diff, asks to confirm
+./scripts/publish-skill.sh --dry-run # preview changes without pushing
+```
+
+The script clones the GitHub repo, replaces all files with the current `skills/refstash/` contents, and pushes with a commit like `chore: sync from inspire@<commit>`.
 
 ## License
 

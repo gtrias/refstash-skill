@@ -28,6 +28,28 @@ Connect to Refstash to fetch curated UI references and generate design insights.
 
 ## Available Operations
 
+### `refstash.listProjects`
+
+List projects accessible to the current token (owned + collaborations).
+
+**Parameters:** none
+
+**Returns:**
+```typescript
+{
+  projects: Array<{
+    id: string
+    name: string
+    description: string | null
+    type: string
+    phase: string
+    status: string
+    isPublic: boolean
+  }>
+  resultCount: number
+}
+```
+
 ### `refstash.search`
 
 Fetch references from your Refstash projects.
@@ -51,6 +73,33 @@ Fetch references from your Refstash projects.
 ```
 Search my "Dashboard Redesign" project for references tagged "navigation" and "analytics". Return up to 15 results.
 ```
+
+### `refstash.addReference`
+
+Add a new reference from a URL. Optionally assign it to a project and tag it.
+
+**Parameters:**
+- `url` (string, required): The URL to save as a reference
+- `title` (string, required): Title for the reference
+- `description` (string, optional): Description of the reference
+- `tags` (string[], optional): Tags to assign
+- `projectId` (string, optional): Project ID to add the reference to
+- `type` (string, optional): One of `screenshot`, `component`, `flow`, `screencast` (default: `screenshot`)
+
+**Returns:**
+```typescript
+{
+  referenceId: string
+  imageUrl: string  // Auto-generated screenshot thumbnail
+}
+```
+
+**Example:**
+```
+Add https://linear.app to my "Inspire" project with tags "saas", "project-management", "clean-ui".
+```
+
+**API endpoint:** `POST /api/skill/references/add`
 
 ### `refstash.getReference`
 
